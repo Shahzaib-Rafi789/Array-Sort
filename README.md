@@ -7,10 +7,11 @@ This project is a web application designed to compare the performance of data pr
 To run the project locally, follow these steps:
 1. Clone this repository to your local machine.
 2. Ensure you have a modern web browser installed (e.g., Google Chrome, Mozilla Firefox).
-3. Open the `index.html` file in your preferred browser.
+3. Run the command `python -m http.server`.
+4. Enter the url `http://localhost:8000/SortArray.html`.
 
 ## Performance Findings:
-Using Web Workers for data processing provides significant performance improvements, especially when dealing with large datasets. By offloading processing tasks to separate worker threads, the main UI thread remains responsive, resulting in a smoother user experience.
+Using Web Workers for data processing provides some performance improvements but had negative effects for smaller datasets.
 
 ## Challenges Faced and Solutions:
 ### Challenge 1: Cross-Origin Security Restrictions
