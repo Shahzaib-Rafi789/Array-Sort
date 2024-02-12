@@ -5,13 +5,18 @@ function startProcessing() {
     var arr = generateRandomArray(arraySize);
 
     // Without workers
+    console.log("Processing started without web workers");
     var startWithoutWorkers = performance.now();
     var sortedArray = sortArray(arr);
     var endWithoutWorkers = performance.now();
     var timeWithoutWorkers = endWithoutWorkers - startWithoutWorkers;
     updateProgress('progress-without-workers', 100, timeWithoutWorkers);
+    console.log(sortedArray.slice(0, 50).join(', '));
+    sortedArray = []
+    console.log("Processing ended without web workers");
 
     // With workers
+    console.log("Processing started with web workers");
     var startWithWorkers = performance.now();
     var workers = [];
     var chunkSize = Math.ceil(arraySize / numWorkers);
@@ -28,10 +33,14 @@ function startProcessing() {
                 var endWithWorkers = performance.now();
                 var timeWithWorkers = endWithWorkers - startWithWorkers;
                 updateProgress('progress-with-workers', 100, timeWithWorkers);
+                console.log(sortedArray.slice(0, 50).join(', '));
+                console.log("Processing ended with web workers");
             }
         };
+        console.log("running "+i)
         workers.push(worker);
     }
+    
 }
 
 function generateRandomArray(size) {

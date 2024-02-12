@@ -8,10 +8,10 @@ To run the project locally, follow these steps:
 1. Clone this repository to your local machine.
 2. Ensure you have a modern web browser installed (e.g., Google Chrome, Mozilla Firefox).
 3. Run the command `python -m http.server`.
-4. Enter the url `http://localhost:8000/SortArray.html`.
+4. Enter the url `http://localhost:8000/index.html`.
 
 ## Performance Findings:
-Using Web Workers for data processing provides some performance improvements but had negative effects for smaller datasets.
+Using Web Workers for data processing provides major performance improvements but had negative effects for smaller datasets.
 
 ## Challenges Faced and Solutions:
 ### Challenge 1: Cross-Origin Security Restrictions
